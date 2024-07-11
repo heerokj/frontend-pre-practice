@@ -56,18 +56,22 @@
         //랜덤 숫자 구하기
         $('#startBtn').click(function (){
             randomNumber = Math.floor(1000 + Math.random() * 9000);
-                
+ 
             //램덤 숫자 붙이기
             let temp_html = `<p id="num">${randomNumber}</p>`;
-                $('#num').append(temp_html);
-            })
 
-        //3초뒤 함수 실행
-        setTimeout(function() {
-            console.log('3초 후 함수 실행');
-            //fadeOut : 사라짐
-            $('#num').fadeOut();
-        }, 3000);
+            console.log("temp_html "+temp_html) ;
+                $('#num').html(temp_html).fadeIn(); //코드에서 숫자가 다시 나타나지 않는 이유는 #num 요소가 fadeOut된 후에 
+                //다시 숫자를 추가하지 않기 때문임 => fadeIn을 붙이면 해결
+
+            //3초뒤 함수 실행
+            setTimeout(function() {
+                //fadeOut : 사라짐
+               // $('#num').fadeOut();
+                $('#num').fadeOut();
+            }, 3000);
+            
+        })
 
         //제출버튼 클릭 
         $('#subBtn').click(function(){
@@ -78,11 +82,10 @@
             //결과 알려주기
             if(val == randomNumber){
                 temp_html = `<p id="result">정답입니다!</p>`;
-                $('#result').append(temp_html);
             }else{
                 temp_html = `<p id="result">오답입니다. 정답은 ${randomNumber}입니다.</p>`;
-                $('#result').append(temp_html);
             }
+            $('#result').html(temp_html);
         })
     });
 
