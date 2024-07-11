@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코테 연습하기</title>
+    <script>
+/*
+자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.
+*/
+
+        function solution() { 
+            let n = 987; //자연수
+
+            var a = (n + '').split('');
+            var b = 0;
+            console.log(a);
+            
+            for(var i = 0; i < a.length; ++i) {
+                b += parseInt(a[i]);
+            }
+            return b;
+
+            return answer;           
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="solution()">테스트</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
